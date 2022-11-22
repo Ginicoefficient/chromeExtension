@@ -1,16 +1,25 @@
 const saveButtonEl = document.getElementById("input-btn");
 const inputEl = document.getElementById("input-el");
 const ulEl = document.getElementById("ul-el");
-let myLeads = ["a", "b"];
+let myLeads = [];
 
 function saveInput() {
   myLeads.push(inputEl.value);
-  console.log(myLeads);
   inputEl.value = "";
+  renderLeads();
 }
 
 saveButtonEl.addEventListener("click", saveInput);
 
-for (i = 0; i < myLeads.length; i++) {
-  ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
+function renderLeads() {
+  let listItems = "";
+  for (i = 0; i < myLeads.length; i++) {
+    listItems += `
+    <li>
+      <a target='_blank' href='${myLeads[i]}'>
+        ${myLeads[i]}
+        </a>
+    </li>`;
+  }
+  ulEl.innerHTML = listItems;
 }

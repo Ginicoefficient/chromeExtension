@@ -33,3 +33,16 @@ button {
 button:active {
   transform: scale(97%);
 }
+
+ul {
+  margin-top: 10px;
+  list-style-type: none;
+  padding-left: 0;
+}
+li {
+  margin-top: 10px;
+}
+
+a {
+  color: #5f9341;
+}
